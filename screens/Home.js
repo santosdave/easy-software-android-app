@@ -6,9 +6,12 @@ const Home = () => {
     return (
         <SafeAreaView style={styles.container}>
             <View style={tw `p-5`}>
-                <Text style={styles.headerText}>Homepage</Text>
-                <Text style={styles.headerText1}> By Santos</Text>
                 <View  style={styles.subcontainer}>
+                    <Text style={styles.headerText}>Homepage</Text>
+                    <Text style={styles.headerText1}> By Santos</Text>
+                </View>
+                
+                <View style={styles.navContainer} >
                     <NavOptions/>
                 </View>
             </View>
@@ -26,16 +29,25 @@ const styles = StyleSheet.create({
         padding: 10,
     },
     subcontainer: {
-        
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: 10,
+    },
+    navContainer:{
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: 10,
     },
     headerText: {
-        fontSize: 30,
+        fontSize: 50,
         margin: 0,
         fontWeight: '600',
         marginBottom:4,
+        color: 'white',
+        
     },
     headerText1: {
-        fontSize: 10,
+        fontSize: 20,
         margin: 0,
         fontWeight: '300',
     },

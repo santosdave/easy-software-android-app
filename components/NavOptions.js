@@ -27,16 +27,15 @@ const NavOptions = () => {
          renderItem={({item})=>(
              <TouchableOpacity
              onPress={()=> navigation.navigate(item.screens)}
-              style={tw `p-2 pl-6 pb-8 pt-4 bg-gray-200 m-2 w-60`}>
+              style={tw `p-7  bg-gray-200 m-2 w-60 rounded-xl`}>
                  <View>
                     <Icon
-                        style={tw `p-2 bg-black rounded-full w-40  `}
+                        style={tw `p-4 bg-black rounded-full w-40  `}
                         name={item.icon}
                         color="white"
-                       
                         type="antdesign"
                     />
-                     <Text style={tw `mt-2 text-lg  font-semibold `}>{item.title}</Text>
+                     <Text style={tw `mt-2 ml-9 text-lg  font-bold `}>{item.title}</Text>
                      
                  </View>
              </TouchableOpacity>
