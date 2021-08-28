@@ -34,6 +34,7 @@ const NavOptions = () => {
                         name={item.icon}
                         color="white"
                         type="antdesign"
+                        size={45}
                     />
                      <Text style={tw `mt-2 ml-9 text-lg  font-bold `}>{item.title}</Text>
                      

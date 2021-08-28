@@ -48,10 +48,11 @@ export default function App() {
               }}
           />
           <Stack.Screen
-              name="Edit Profile"
+              name="EditProfile"
               component={EditProfile}
               options={{
                 headerShown:true,
+                title: 'Edit Profile',
               }}
           />
           <Stack.Screen
@@ -62,17 +63,19 @@ export default function App() {
               }}
           />
           <Stack.Screen
-              name="View User"
+              name="ViewUser"
               component={ViewUser}
               options={{
                 headerShown:true,
+                title: 'View User',
               }}
           />
           <Stack.Screen
-              name="Edit User"
+              name="EditUser"
               component={EditUser}
               options={{
                 headerShown:true,
+                title: 'Edit User',
               }}
           />
         </Stack.Navigator>

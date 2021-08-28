@@ -9,7 +9,7 @@ const Input = () => {
                 <TextInput
                 style={styles.input}
                 placeholder="Email/Username"
-            placeholderTextColor="primary"
+            placeholderTextColor="black"
             numberOfLines={1}
             />
             </View>
@@ -17,7 +17,7 @@ const Input = () => {
                 <TextInput
                 style={styles.input}
                 placeholder="Password"
-                placeholderTextColor="primary"
+                placeholderTextColor="black"
                 secureTextEntry={true}
                 numberOfLines={1}
             />
@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
         padding: 10,
         flex: 1,
         fontSize:16,
-        fontFamily: 'Helvetica',
+        
         color: '#444',
         justifyContent: 'center',
         alignItems: 'center',
