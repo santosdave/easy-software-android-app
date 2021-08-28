@@ -1,61 +1,14 @@
-import React, {createRef} from 'react'
-import { StyleSheet, Text, View, TouchableOpacity, ImageBackground } from 'react-native'
+import React from 'react'
+import { StyleSheet, Text, View, TouchableOpacity, ImageBackground,TextInput } from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import FontAwesome from 'react-native-vector-icons/FontAwesome'
-import Feather from 'react-native-vector-icons/Feather'
-import  BottomSheet  from 'reanimated-bottom-sheet'
-import Animated from 'react-native-reanimated'
-import { TextInput } from 'react-native-paper'
 const EditProfile = () => {
-    const reference =createRef();
-    const down=new Animated.Value(1);
-
-    const renderDetail=() => (
-            <View style={styles.panel}>
-                <View style={{alignItems: 'center'}}>
-                    <Text style={styles.panelTitle}>
-                        Upload a Photo
-                    </Text>
-                    <Text style={styles.panelSubtitle}>
-                        Choose Your Profile Picture
-                    </Text>
-                </View>
-                <TouchableOpacity style={styles.panelButton}>
-                    <Text style={styles.panelButtonTitle}>Take a Photo</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.panelButton}>
-                    <Text style={styles.panelButtonTitle}>Choose from Library</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.panelButton} onPress={()=> this.bs.current.snapTo(1)}>
-                    <Text style={styles.panelButtonTitle}>Cancel</Text>
-                </TouchableOpacity>
-            </View>
-    );
-    const renderHeader=() => (
-        <View style={styles.header}>
-            <View style={styles.panelHeader}>
-                <View style={styles.panelHandler}>
-
-                </View>
-            </View>
-        </View>
-    );
+    
     return (
         <View style={styles.container}>
-            <BottomSheet
-                ref={this.reference}
-                snapPoints={[330, 0]}
-                initialSnap={1}
-                renderContent={this.renderDetail}
-                renderHeader={this.renderHeader}
-                callbackNode={this.down}
-                enabledGestureInteraction={true}
-            />
-            <Animated.View style={{margin:20, opacity:Animated.add(0.1, Animated.multiply(this.down, 1.0)),
-            
-            }}>
+            <View style={{margin:20,}}>
                 <View style={{alignItems: 'center'}}>
-                    <TouchableOpacity onPress={()=>this.reference.current.snapTo(0)}>
+                    <TouchableOpacity onPress={()=>{}}>
                         <View style={{
                             height: 100,
                             width: 100,
@@ -89,7 +42,7 @@ const EditProfile = () => {
                 </View>
                 <View style={styles.action}>
                     <FontAwesome name={'user-o'} size={20}/>
-                        <TextInputInput
+                        <TextInput
                             placeholder='First Name'
                             placeholderTextColor='#666666'
                             style={styles.textInput}
@@ -116,7 +69,7 @@ const EditProfile = () => {
                         />
                 </View>
                 <View style={styles.action}>
-                    <FontAwesome name={'envolope-o'} size={20}/>
+                    <FontAwesome name={'envelope-o'} size={20}/>
                         <TextInput
                             placeholder='Email'
                             keyboardType='email-address'
@@ -135,7 +88,8 @@ const EditProfile = () => {
                         />
                 </View>
                 <View style={styles.action}>
-                    <FontAwesome name={'map-marker-outline'} size={20}/>
+                   
+                    <Icon name="map-marker-radius"  size={20}/>
                         <TextInput
                             placeholder='City'
                             placeholderTextColor='#666666'
@@ -146,7 +100,7 @@ const EditProfile = () => {
                 <TouchableOpacity style={styles.commandButton} onPress={()=>{}}>
                     <Text style={styles.panelButtonTitle}>Submit</Text>
                 </TouchableOpacity>
-            </Animated.View>
+            </View>
         </View>
     )
 }
@@ -164,11 +118,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         marginTop: 10,
     },
-    panel: {
-        padding: 20,
-        backgroundColor:'#FFFFFF',
-        paddingTop: 20,
-    },
     header: {
         backgroundColor:'#FFFFFF',
         shadowColor:'#333333',
@@ -178,38 +127,6 @@ const styles = StyleSheet.create({
         paddingTop:20,
         borderTopLeftRadius:20,
         borderTopRightRadius:20,
-    },
-    panelHeader: {
-        alignItems: 'center',
-    },
-    panelHandler: {
-        width: 40,
-        height: 8,
-        borderRadius:4,
-        backgroundColor:'#00000040',
-        marginBottom:10,
-    },
-    panelTitle: {
-        fontSize:27,
-        height:35,
-    },
-    panelSubtitle: {
-        fontSize:14,
-        color: 'gray',
-        height: 30,
-        marginBottom:10,
-    },
-    panelButton: {
-        padding: 13,
-        borderRadius:10,
-        backgroundColor:'#FF6347',
-        alignItems: 'center',
-        marginVertical:7,
-    },
-    panelButtonTitle: {
-        fontSize:17,
-        fontWeight:'bold',
-        color: 'white',
     },
     action: {
         flexDirection: 'row',
